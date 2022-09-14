@@ -6,7 +6,9 @@ from arg import arg_parser
 
 from transformers import BertForSequenceClassification
 
+
 argp = arg_parser()
+
 
 class Custom_model(torch.nn.Module): 
     def __init__(self):

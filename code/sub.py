@@ -3,9 +3,10 @@ import datetime
 import time
 from arg import arg_parser 
 
+
 argp = arg_parser()
 
-# 정확도 계산 함수
+
 def flat_accuracy(preds, labels):
     
     pred_flat = np.argmax(preds, axis=1).flatten()
@@ -14,7 +15,6 @@ def flat_accuracy(preds, labels):
     return np.sum(pred_flat == labels_flat) / len(labels_flat)
 
 
-# 시간 표시 함수
 def format_time(elapsed):
 
     # 반올림
@@ -32,7 +32,7 @@ def convert_to_text(text):
                                                 ,12:"Polish",13:"German",14:"Spanish"
                                                 ,15:"Scottish",16:"English",17:"Greek"})
 
-    text['predict_label'] = text['predict_label'].replace({0:"Korean",1:"French",2:"Irish"
+    text['predicted_label'] = text['predicted_label'].replace({0:"Korean",1:"French",2:"Irish"
                                                 ,3: "Chinese",4:"Portuguese",5:"Dutch"
                                                 ,6:"Japanese",7:"Russian", 8:"Czech"
                                                 ,9:"Arabic",10:"Italian",11:"Vietnamese"

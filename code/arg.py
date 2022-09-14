@@ -1,5 +1,6 @@
 import argparse
 
+
 def arg_parser():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('--predict_txt', default="/home/joo/name_data/data/test_label_2.csv",type=str)
