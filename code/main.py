@@ -185,6 +185,8 @@ def main(argp):
             eval_accuracy += tmp_eval_accuracy
             nb_eval_steps += 1
 
+
+            # target label vs. predicted_label 
             for j in label_ids:
                 target_label.append(j)
             
@@ -192,8 +194,10 @@ def main(argp):
                 test_label = np.argmax(i)
                 prediction_label.append(test_label)
 
-        
+        # save result data
         new_data =pd.DataFrame({'target_label':target_label,"predict_label":prediction_label})
+
+        # convert label_idx to label_text
         convert_to_text(new_data)
 
         print("  Accuracy: {0:.2f}".format(eval_accuracy/nb_eval_steps))
